@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    var total = 0;
+    var totalMessage = "";
+    if (IsPost)
+    {
+        var num1 = Request["text1"];
+        var num2 = Request["text2"];
+
+        total = num1.AsInt() + num2.AsInt();
+        totalMessage = "Total = " + total;
+    }
+}
+<br />
+<p>
+    Ingresa dos números y después da click <strong>Agregar</strong>.
+</p>
+
+<form action="" method="post">
+    <p>
+        <label for="text1">Primer Número:</label>
+        <input type="text" name="text1"/>
+    </p>
+    <p>
+        <label for="text2">Segundo Número:</label>
+        <input type="text" name="text2"/>
+    </p>
+    <p><input type="submit" value="Agregar" /></p>
+</form>
+<p>@totalMessage</p>
