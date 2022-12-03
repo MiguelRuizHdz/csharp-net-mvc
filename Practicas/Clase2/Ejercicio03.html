@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos anidados</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        var myCars = [
+            { "name": "Ford", "model": ["Fiesta","Focus","Mustang"]},
+            { "name": "BMW", "model": ["320","X3","X5"]},
+            { "name": "Fiat", "model": ["500","Panda"]},
+        ];
+        var myObj = {
+            "name": "Miguel",
+            "age": 22,
+            "cars": myCars
+        };
+        var data = "";
+        data += "<h1>" + "Nombre: " + myObj.name + "</h1>";
+        data += "<h1>" + "Edad: " + myObj.age + "</h1>";
+        for (i in myObj.cars) {
+            data += "<h2>" + myObj.cars[i].name + "</h2>";
+            for (j in myObj.cars[i].model) {
+                data += myObj.cars[i].model[j] + " ";
+            }
+        }
+        document.getElementById("demo").innerHTML = data;
+    </script>
+</body>
+</html>

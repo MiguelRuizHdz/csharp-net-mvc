@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades tipo Object</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        var myObj = {
+            "nombre": "Miguel",
+            "edad": 20,
+            "autos": {
+                "car1": "mercedes",
+                "car2": "bmw",
+                "car3": "matrix",
+            },
+        };
+        var values = "";
+        for (x in myObj) {
+            if (myObj[x]=="[object Object]") {
+                for (y in myObj.autos) {
+                    values += myObj.autos[y] + " ";
+                }
+            } else {
+                values += myObj[x] + " ";
+            }
+        }
+        document.getElementById("demo").innerHTML = values;
+    </script>
+</body>
+</html>

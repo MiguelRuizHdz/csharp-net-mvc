@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON.parse()</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        var myJsonString = '{"name": "Miguel","age": 22,"city": "Monterrey"}';
+        var myObj = JSON.parse(myJsonString);
+        document.getElementById("demo").innerHTML = myObj.name + " " + myObj.age + " " + myObj.city;
+    </script>
+</body>
+</html>
