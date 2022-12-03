@@ -20,7 +20,11 @@ namespace Test.Controllers
 
         public ActionResult About()
         {
-            ViewData["Message"] = "Bienvenido a ASP.NET MVC.";
+            ViewData["Message"] = "Bienvenido a ASP.NET MVC. del Sabado";
+            ViewData["Receso"] = "El receso es a las 11:00 A.M.";
+            ViewBag.Nombre = "Miguel Ruiz";
+            ViewBag.Modulo= "ASP.NET MVC";
+
             return View();
         }
         
