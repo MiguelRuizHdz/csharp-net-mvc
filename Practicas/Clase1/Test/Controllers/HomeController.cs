@@ -23,6 +23,9 @@ namespace Test.Controllers
             ViewData["Message"] = "Bienvenido a ASP.NET MVC. del Sabado";
             ViewData["Receso"] = "El receso es a las 11:00 A.M.";
             ViewBag.Nombre = "Miguel Ruiz";
+            ViewBag.Direccion = "Guadalupe, Nuevo León";
+            ViewBag.Telefono = "8181888600";
+            ViewBag.Correo = "Miguel Ruiz";
             ViewBag.Modulo= "ASP.NET MVC";
 
             return View();
