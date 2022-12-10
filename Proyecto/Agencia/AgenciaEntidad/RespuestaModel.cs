@@ -8,8 +8,8 @@ namespace AgenciaEntidad
 {
     public class RespuestaModel
     {
-        public string Id { get; set; }
-        public string ErrorId { get; set; }
+        public int Id { get; set; }
+        public int ErrorId { get; set; }
         public string MensajeRespuesta { get; set; }
     }
 }
