@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\DbConnection.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="AutomovilDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

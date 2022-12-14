@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "Automovil";
+}
+
+<h2>Automovil</h2>
+<div id="grillaAutomovil" class="p-m tab-pane">
+    <div class="row">
+        <div class="col-xs-12 text-right">
+            <button id="btnAgregarAutomovil" class="btn btn-primary">Nuevo</button>
+            <button id="btnActualizarAutomovil" class="btn btn-primary">Actualizar</button>
+            <button id="btnEliminarAutomovil" class="btn btn-primary">Eliminar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 m-t-sm">
+            <div class="table-responsive">
+                <table id="dtAutomovil" class="table table-striped table-bordered table-condensed table-hover" style="width: 100%;">
+
+                    <thead>
+                        <tr>
+                            <td style="width: 20%">Automovil Id</td>
+                            <td style="width: 20%">Marca</td>
+                            <td style="width: 20%">Modelo</td>
+                            <td style="width: 20%">Año</td>
+                            <td style="width: 20%">Precio</td>
+                        </tr>
+                    </thead>
+                    <tbody id="dtAutomovilBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Modales *@
+
+<div class="modal" tabindex="-1" role="dialog" id="mdlAgregaAutomovil">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Agregar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Marca:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="marca" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Modelo:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="modelo" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Año:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="anio" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Precio:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="precio" placeholder="col-form-label" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAgregarAutomovil_2">Agregar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="mdlActualizarAutomovil">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar Automovil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Buscar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Id:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Id" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Marca:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="a_marca" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Modelo:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="a_modelo" placeholder="col-form-label" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Año:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="a_anio" placeholder="col-form-label" />
+                    </div>
+                </div>
+            
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Precio:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="a_precio" placeholder="col-form-label" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnActualizarAutomovil_2">Actualizar Registro</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Agencia/js")
+<script>
+    var _consultarAutomovil = '@Url.Action("consultarAutomovil", "Automovil")';
+    var _consultarAutomovilXId = '@Url.Action("consultarAutomovilXId", "Automovil")';
+    var _insertarAutomovil = '@Url.Action("insertarAutomovil", "Automovil")';
+    var _actualizarAutomovil = '@Url.Action("actualizarAutomovil", "Automovil")';
+</script>
