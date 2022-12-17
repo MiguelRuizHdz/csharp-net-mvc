@@ -8,6 +8,9 @@ var Automovil = {
     MostrarAutomovilModal2: function () {
         $('#mdlActualizarAutomovil').modal('show');
     },
+    MostrarAutomovilModal3: function () {
+        $('#mdlEliminarAutomovil').modal('show');
+    },
     CerrarAutomovilModal: function () {
         $('#mdlAgregaAutomovil').modal('hide');
     }
@@ -27,6 +30,11 @@ $('#btnActualizarAutomovil').on('click', function (e) {
     Automovil.MostrarAutomovilModal2();
 });
 
+$('#btnEliminarAutomovil').on('click', function (e) {
+    e.preventDefault();
+    Automovil.MostrarAutomovilModal3();
+});
+
 $('#btnAgregarAutomovil_2').on('click', function (e) {
     e.preventDefault();
     InsertarAutomovil_2();
@@ -37,10 +45,36 @@ $('#btnActualizarAutomovil_2').on('click', function (e) {
     ActualizarAutomovil();
 });
 
+$('#btnEliminarAutomovil_2').on('click', function (e) {
+    e.preventDefault();
+    EliminarAutomovil();
+});
+
 $('#btnBuscarAutomovil').on('click', function (e) {
     e.preventDefault();
     BuscarAutomovil_2();
 });
+
+function EliminarAutomovil() {
+    var automovilId = $('#Id_eliminar').val().trim();
+    var data = { automovilId };
+    jsonServerResponse(_eliminarAutomovil, data,
+        function (beforeSend) {   
+        },
+        function (response) {  
+            if (response.success === true ) {
+                $('#mdlEliminarAutomovil').modal('hide');
+                alert('Registro eliminado correctamente');
+                consultarAutomovil();
+            }
+        },
+        function (error) {   
+            alert('Error al eliminar error');
+        },
+        function (complete) {   
+        }
+    );
+}
 
 function ActualizarAutomovil() {
     var automovilId = $('#Id').val().trim();
