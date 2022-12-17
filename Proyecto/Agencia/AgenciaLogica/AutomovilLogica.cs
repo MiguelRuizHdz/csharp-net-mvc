@@ -69,18 +69,21 @@ namespace AgenciaLogica
             return m;
         }
         // Método para buscar Automovil X Id
-        public RespuestaModel consultarAutomovilXId(Dictionary<string, dynamic> parametros)
+        public ResponseModel consultarAutomovilXId(Dictionary<string, dynamic> parametros)
         {
-            RespuestaModel m = new RespuestaModel();
+            ResponseModel m = new ResponseModel();
             try
             {
-                m = automovilDatos.consultarAutomovilXId<RespuestaModel>(parametros);
+                var res = automovilDatos.consultarAutomovilXId<AutomovilModel>(parametros);
+                m.Data = res;
+                m.Success = true;
+                m.Message = "";
             }
             catch (Exception ex)
             {
-                m.ErrorId = -2;
-                m.Id = 0;
-                m.MensajeRespuesta = ex.Message + ". " + ex.InnerException;
+                m.Data = null;
+                m.Success = false;
+                m.Message = ex.Message + ". " + ex.InnerException;
             }
             return m;
         }
